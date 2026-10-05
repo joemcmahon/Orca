@@ -3,7 +3,10 @@
 /* global createWindow */
 
 const { app, BrowserWindow, Menu } = require('electron')
+const remote = require('@electron/remote/main')
 const path = require('path')
+
+remote.initialize()
 
 let isShown = true
 
@@ -23,6 +26,8 @@ app.on('ready', () => {
     autoHideMenuBar: process.platform === 'darwin',
     webPreferences: { zoomFactor: 1.0, nodeIntegration: true, contextIsolation: false, backgroundThrottling: false }
   })
+
+  remote.enable(app.win.webContents)
 
   app.win.loadURL(`file://${__dirname}/sources/index.html`)
   // app.inspect()

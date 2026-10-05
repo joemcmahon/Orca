@@ -24,10 +24,11 @@
     "push": "npm run build ; npm run push_osx ; npm run push_linux ; npm run push_win ; npm run clean ; npm run status"
   },
   "devDependencies": {
-    "electron": "^44.0.0",
-    "@electron/packager": "^20.3.0"
+    "@electron/packager": "^20.3.0",
+    "electron": "^44.0.0"
   },
   "dependencies": {
+    "@electron/remote": "^2.1.3",
     "node-osc": "^11.7.1"
   },
   "standard": {
